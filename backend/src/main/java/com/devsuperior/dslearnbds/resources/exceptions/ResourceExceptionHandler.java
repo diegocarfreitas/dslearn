@@ -65,7 +65,7 @@ public class ResourceExceptionHandler {
 	}
 
 	@ExceptionHandler(UnauthorizedException.class)
-	public ResponseEntity<OAuthCustomError> nnauthorized(UnauthorizedException e, HttpServletRequest request) {
+	public ResponseEntity<OAuthCustomError> unauthorized(UnauthorizedException e, HttpServletRequest request) {
 		OAuthCustomError err = new OAuthCustomError("Unauthorized", e.getMessage());
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(err);
 	}
